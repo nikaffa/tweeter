@@ -5,17 +5,17 @@
   width: 100%;
 }
 
+#tweet-below {
+  display: flex;
+  justify-content: space-between;
+}
+
 #tweet-text {
   width: 100%;
   border: none;
   background: none;
   border-bottom: solid #2f2302;
   
-}
-
-#tweet-below {
-  display: flex;
-  justify-content: space-between;
 }
 
 button {
