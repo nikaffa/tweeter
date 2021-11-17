@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <!-- new tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <!-- created tweets CSS -->
+    <link rel="stylesheet" href="/styles/created-tweets.css" type="text/css" />
     <!--viewport meta-tag-->
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-
   </head>
 
   <body>
@@ -37,7 +37,8 @@
       </div>
     </nav>
 
-    <header>
+    <!--Icon & name content-->
+    <header class="header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -59,6 +60,22 @@
           </div>
         </form>
       </section>
+
+      <!-- Created tweets -->
+      <article class="created-tweets">
+        <header>
+          <span class="username"><i class="fas fa-user-tie"></i> Your Name</span>
+          <span class="userid">@name</span>
+        </header>
+        
+        <p>Lorem</p>
+
+        <footer>
+          <span>time created</span>
+          <span><i class="fas fa-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i></span>
+        </footer>
+      </article>
+ 
     </main>
   </body>
   

@@ -1,0 +1,34 @@
+.created-tweets {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-style: solid;
+  margin: 5% 0;
+  padding: 1rem;
+}
+.created-tweets:hover {
+  border-style: outset;
+  border-color:  #4056A1;
+
+}
+
+.created-tweets > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+}
+p {
+  font-size: 1.5em;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid;
+}
+.created-tweets > footer > span >.fas {
+  color: #4056A1;
+}
+.created-tweets > footer > span >.fas:hover {
+  color: goldenrod;
+}
