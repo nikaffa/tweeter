@@ -29,3 +29,12 @@ button {
 .counter {
   font-family: 'Bungee';
 }
+
+#error {
+  color: red;
+  border: solid 5px red;
+  height: 100px;
+  text-align: center;
+  justify-content: center;
+  font-family: "Source Sans Pro", sans-serif;
+}

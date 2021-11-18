@@ -6,6 +6,8 @@ $( document ).ready(function() {
     let counter = $(this).parent().find("output").val(140 - numChars);
     if (numChars > 140) {
       counter.css({"color": "red"});
+    } else {
+      counter.css({"color": "black"});
     }
   });
 });

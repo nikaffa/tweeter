@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $( document ).ready(function() {
+  $("#error").hide();
 
   //CORS: Preventing XSS with Escaping
   const escape = (str) => {
@@ -46,29 +47,34 @@ $( document ).ready(function() {
       url: "/tweets",
       method: "GET"
     })
-      .then(res => renderTweets(res));
+      .then(res => {
+        renderTweets(res);
+      });
+      //$("#tweet-text").empty();
   };
   loadTweets();
+  
 
   //adds event lestener to the form
   $("form").on("submit", function(event) {
     event.preventDefault();
     console.log($(".counter").val());
     if ($(".counter").val() > 139) {
-      alert("Empty tweet");
-    } if ($(".counter").val() < 0) {
-      alert("Maximum characters exceeded");
+      $("#error").slideDown("slow");
+      $("#error p").text("⚠️ No empty tweet ⚠️");
+    } else if ($(".counter").val() < 0) {
+      $("#error").slideDown("slow");
+      $("#error p").text("⚠️ Too many chars ⚠️");
     } else {
+      $("#error").slideUp("slow");
       //submits an AJAXPOST request that sends the serialized data to the server as a query string
       $.ajax({
         url: "/tweets",
         method: "POST",
         data: $(this).serialize(), // sterialize() turns a form input data into a query string
         success: () => loadTweets()
-      });
+      }); 
     }
-    //let url = $(this).attr("action"); // /tweets
-
-    
+    //let url = $(this).attr("action"); // /tweets 
   });
 });
