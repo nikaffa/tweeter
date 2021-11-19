@@ -4,9 +4,9 @@ Tweeter is a simple, single-page Twitter clone built with Node and Express in ba
 
 ## Final Product
 
-!["Main page"]()
+!["Main page"](https://github.com/nikaffa/tweeter/blob/master/docs/tweets.gif)
 
-!["Tablet layout"]()
+!["Tablet layout"](https://github.com/nikaffa/tweeter/blob/master/docs/tweets_tablet.gif)
 
 
 ## Dependencies
