@@ -1,41 +1,35 @@
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   position: fixed;
   top: 0;
+  z-index: 1;
   height: 120px;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
+  padding: 1.5em;
 }
-.logo {
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
-  font-family: "Bungee", sans-serif;
-  font-size: 42px;
-}
-.nav-right {
+
+nav div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 1.5em;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 32px;
 }
-.angle {
+
+#logo {
+  font-family: "Bungee", sans-serif;
+  font-size: 42px;
+}
+
+nav div i {
  color:violet;
 }
 
+/* Tablet Styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   nav {
     background: none;
   }
-}
-@media screen and (min-width: 1024px) {
-  
 }

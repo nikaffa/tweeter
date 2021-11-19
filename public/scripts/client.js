@@ -5,20 +5,23 @@ $( document ).ready(function() {
 
   //CORS: Preventing XSS with Escaping
   const escape = (str) => {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+    let p = document.createElement("p");
+    p.appendChild(document.createTextNode(str));
+    return p.innerHTML;
   };
 
   const createTweetElement = (tweet) => {
     const $tweet = $(`
       <article class="created-tweets">
         <header>
-          <span class="username"><img src='${tweet.user.avatars}'</img> ${tweet.user.name}</span>
-          <span class="userid">${tweet.user.handle}</span>
+        <div>
+          <img src='${tweet.user.avatars}'</img>
+          <span> ${tweet.user.name}</span>
+        </div>
+        <span class="user-id">${tweet.user.handle}</span>
         </header>
         
-        <div class="text">${escape(tweet.content.text)}</div>
+        <p id="text">${escape(tweet.content.text)}</p>
 
         <footer>
           <span>${timeago.format(tweet.created_at)}</span>
@@ -35,6 +38,7 @@ $( document ).ready(function() {
     tweets.forEach(el => {
       const $tweet = createTweetElement(el); //calls createTweetElement for each tweet
       $('.tweets-container').prepend($tweet); //appends returned value to the .tweets-container
+
     });
   };
 
@@ -68,7 +72,10 @@ $( document ).ready(function() {
         method: "POST",
         data: $(this).serialize(), // sterialize() turns a form input data into a query string
         success: () => loadTweets()
-      }); 
+      });
+      $("textarea").val('');
+      $("output").val(140);
+
     }
     //let url = $(this).attr("action"); // /tweets
   });

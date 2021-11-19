@@ -15,19 +15,23 @@
   
 }
 .created-tweets:hover {
-  border-style: outset;
+  box-shadow: 10px 10px #4056A1;
   border-color:  #4056A1;
-
 }
 
 .created-tweets > header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  
+}
+.created-tweets > header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.text {
+#text {
   font-size: 1.5em;
   overflow-wrap: anywhere;
   width: 100%;
@@ -44,4 +48,7 @@ footer {
 }
 .created-tweets > footer > span >.fas:hover {
   color: goldenrod;
+}
+.user-id {
+  color: #abb7d8;
 }
