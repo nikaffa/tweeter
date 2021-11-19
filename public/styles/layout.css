@@ -19,6 +19,7 @@ body {
   background-color: #f4f1ec;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
+  width: 100%;
   
 }
 
@@ -26,6 +27,21 @@ body {
  * Additional CSS 
  */
 
+.content {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content:space-between;
+  margin-top: 10rem;
+}
+
 .container { 
   margin: 5% 5%;
+  /* width: 90vw; */
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 }

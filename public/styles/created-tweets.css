@@ -1,3 +1,9 @@
+.tweets-container {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+
 .created-tweets {
   display: flex;
   flex-direction: column;
@@ -5,6 +11,8 @@
   border-style: solid;
   margin: 5% 0;
   padding: 1rem;
+  width: 60vw;
+  
 }
 .created-tweets:hover {
   border-style: outset;
@@ -16,11 +24,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 
-p {
+.text {
   font-size: 1.5em;
+  overflow-wrap: anywhere;
+  width: 100%;
 }
+
 footer {
   display: flex;
   flex-direction: row;

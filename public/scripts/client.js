@@ -1,16 +1,13 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+//Client-side JS logic goes here
+ 
 $( document ).ready(function() {
   $("#error").hide();
 
   //CORS: Preventing XSS with Escaping
   const escape = (str) => {
-    let p = document.createElement("p");
-    p.appendChild(document.createTextNode(str));
-    return p.innerHTML;
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
   const createTweetElement = (tweet) => {
@@ -21,7 +18,7 @@ $( document ).ready(function() {
           <span class="userid">${tweet.user.handle}</span>
         </header>
         
-        <p>${escape(tweet.content.text)}</p>
+        <div class="text">${escape(tweet.content.text)}</div>
 
         <footer>
           <span>${timeago.format(tweet.created_at)}</span>
@@ -50,10 +47,8 @@ $( document ).ready(function() {
       .then(res => {
         renderTweets(res);
       });
-      //$("#tweet-text").empty();
   };
   loadTweets();
-  
 
   //adds event lestener to the form
   $("form").on("submit", function(event) {
@@ -75,6 +70,6 @@ $( document ).ready(function() {
         success: () => loadTweets()
       }); 
     }
-    //let url = $(this).attr("action"); // /tweets 
+    //let url = $(this).attr("action"); // /tweets
   });
 });
