@@ -9,7 +9,8 @@ $( document ).ready(function() {
     p.appendChild(document.createTextNode(str));
     return p.innerHTML;
   };
-
+  
+  //Renders a template with a tweet into the DOM
   const createTweetElement = (tweet) => {
     const $tweet = $(`
       <article class="created-tweets">
@@ -34,9 +35,9 @@ $( document ).ready(function() {
 
   //Takes in an array of tweet objects and then appends each one to the .tweets-container
   const renderTweets = (tweets) => {
-    $('.tweets-container').empty(); //clear previous tweets before rendering the new one
+    $('.tweets-container').empty(); //clears previous tweets before rendering the new one
     tweets.forEach(el => {
-      const $tweet = createTweetElement(el); //calls createTweetElement for each tweet
+      const $tweet = createTweetElement(el);
       $('.tweets-container').prepend($tweet); //appends returned value to the .tweets-container
 
     });
@@ -54,10 +55,11 @@ $( document ).ready(function() {
   };
   loadTweets();
 
-  //adds event lestener to the form
+  //Adds event lestener to the form
   $("form").on("submit", function(event) {
     event.preventDefault();
     console.log($(".counter").val());
+
     if ($(".counter").val() > 139) {
       $("#error").slideDown("slow");
       $("#error p").text("⚠️ No empty tweet ⚠️");
@@ -66,6 +68,7 @@ $( document ).ready(function() {
       $("#error p").text("⚠️ Too many chars ⚠️");
     } else {
       $("#error").slideUp("slow");
+
       //submits an AJAXPOST request that sends the serialized data to the server as a query string
       $.ajax({
         url: "/tweets",
@@ -77,6 +80,5 @@ $( document ).ready(function() {
       $("output").val(140);
 
     }
-    //let url = $(this).attr("action"); // /tweets
   });
 });

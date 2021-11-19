@@ -11,9 +11,9 @@
   border-style: solid;
   margin: 5% 0;
   padding: 1rem;
-  width: 60vw;
-  
+  width: 60vw; 
 }
+
 .created-tweets:hover {
   box-shadow: 10px 10px #4056A1;
   border-color:  #4056A1;
@@ -22,8 +22,7 @@
 .created-tweets > header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  
+  justify-content: space-between;  
 }
 .created-tweets > header > div {
   display: flex;
@@ -43,12 +42,15 @@ footer {
   justify-content: space-between;
   border-top: solid;
 }
+
 .created-tweets > footer > span >.fas {
   color: #4056A1;
 }
+
 .created-tweets > footer > span >.fas:hover {
   color: goldenrod;
 }
+
 .user-id {
   color: #abb7d8;
 }
