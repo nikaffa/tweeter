@@ -58,7 +58,6 @@ $( document ).ready(function() {
   //Adds event lestener to the form
   $("form").on("submit", function(event) {
     event.preventDefault();
-    console.log($(".counter").val());
 
     if ($(".counter").val() > 139) {
       $("#error").slideDown("slow");
